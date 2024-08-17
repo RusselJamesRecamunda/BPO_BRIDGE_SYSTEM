@@ -4,32 +4,20 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-header {
-    background-color: #f8f9fa;
-    padding: 20px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
+header .container-fluid {
+    padding: 10px 15px;
 }
 
 header .logo {
-    display: flex;
-    align-items: center;
+    margin: 0;
 }
 
 header .logo img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-
-header .logo h1 {
-    font-size: 24px;
-    margin: 0;
+    width: 80px;
+    height: 80px;
 }
 
 main {
@@ -43,64 +31,37 @@ main {
 .login-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 40px;
     max-width: 1000px;
     width: 100%;
     background-color: #fff;
 }
 
-.image-container img {
-    width: 400px;
-    margin-right: 40px;
-}
-
 .divider {
     width: 2px;
     background-color: #ddd;
-    height: 400px;
-    margin-right: 40px;
-}
-
-.form-container {
-    flex: 1;
-    max-width: 400px;
-    width: 100%;
-}
-
-.form-container form {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.form-container label {
-    margin-bottom: 5px;
-}
-
-.form-container input {
-    padding: 15px;
-    margin-bottom: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 30px;
-    box-sizing: border-box;
+    height: 100%;
+    margin: 0 auto;
 }
 
 .password-container {
     position: relative;
-    width: 100%;
+}
+
+.form-container p {
+    margin-top: 15px;
+    text-align: left;
 }
 
 .password-container input {
-    width: 100%;
     padding-right: 40px;
 }
 
 .toggle-password {
     position: absolute;
     right: 10px;
-    top: 35%;
+    top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -110,56 +71,32 @@ main {
     height: 20px;
 }
 
-.forgot-password-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 15px;
+.warning {
+    color: #F23E3E;
+    font-size: 12px;
+    margin-top: 5px;
+    visibility: hidden;
+    height: 18px;
 }
 
-.form-container button {
-    padding: 15px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
-.form-container button:hover {
-    background-color: #0056b3;
-}
-
-.form-container .forgot-password {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.form-container .forgot-password:hover {
-    text-decoration: underline;
-}
-
-.form-container p {
-    margin-top: 15px;
-}
-
-.form-container p a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.form-container p a:hover {
-    text-decoration: underline;
+input.error + .warning {
+    visibility: visible;
 }
 
 footer {
-    background-color: #06446B;
     color: white;
     padding: 10px;
     text-align: center;
     border-top: 1px solid #ddd;
+    background-color: #0F5078 !important;
+    margin-top: auto;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+}
+
+footer p {
+    margin-bottom: 5px;
 }
 
 footer a {
@@ -175,10 +112,26 @@ input.error {
     border-color: #F23E3E;
 }
 
-.warning {
-    color: #F23E3E;
-    display: none;
-    font-size: 12px;
-    margin-top: -27px;
-    margin-bottom: 15px;
+/* Mobile Specific Adjustments */
+@media (max-width: 767.98px) {
+    .login-container {
+        padding: 20px;
+        max-width: 90%;
+        box-shadow: none;
+        margin-top: -150px;
+    }
+
+    main {
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        min-height: calc(100vh - 80px);
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
 }
